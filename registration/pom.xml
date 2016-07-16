@@ -21,6 +21,10 @@
         A registration server for microservices.
     </description>
 
+    <build>
+        <finalName>registration</finalName>
+    </build>
+
     <!-- Dependencies -->
     <dependencies>
         <dependency>
@@ -33,6 +37,11 @@
             <!-- Eureka service registration -->
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
         </dependency>
     </dependencies>
 
