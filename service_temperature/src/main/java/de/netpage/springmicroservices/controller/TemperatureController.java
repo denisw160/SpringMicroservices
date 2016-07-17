@@ -56,7 +56,7 @@ public class TemperatureController {
         Temperature t = new Temperature();
 
         if (!existsCommand()) {
-            parseTemperature(t, "51.0'C"); // Sample Value, if command not exists
+            parseTemperature(t, "temp=51.0'C"); // Sample Value, if command not exists
         } else {
             try {
                 readTemperatureFromCommand(t);
@@ -93,7 +93,8 @@ public class TemperatureController {
     }
 
     private void parseTemperature(Temperature t, String temp) {
-        final String[] split = StringUtils.split(temp, "'");
+        final String tempValue = StringUtils.remove(temp, "temp=");
+        final String[] split = StringUtils.split(tempValue, "'");
         t.setValue(Double.valueOf(split[0]));
         t.setUnit(split[1]);
     }
