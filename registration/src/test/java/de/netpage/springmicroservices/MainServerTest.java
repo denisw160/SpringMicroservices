@@ -1,5 +1,6 @@
 package de.netpage.springmicroservices;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -9,6 +10,7 @@ import org.junit.Test;
  * @version 1.0
  * @since 16.07.16
  */
+@Ignore
 public class MainServerTest {
 
     @Test

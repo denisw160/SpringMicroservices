@@ -1,6 +1,7 @@
 package de.netpage.springmicroservices;
 
 import de.netpage.springmicroservices.exception.ApplicationException;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -13,6 +14,7 @@ import org.junit.Test;
 public class MainServerTest {
 
     @Test
+    @Ignore
     public void main() throws Exception {
         MainServer.main(new String[]{"localhost"});
     }
