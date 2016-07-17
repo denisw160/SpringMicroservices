@@ -21,6 +21,11 @@
         A simple web-interface for connecting to services.
     </description>
 
+    <!-- Build Settings -->
+    <build>
+        <finalName>web</finalName>
+    </build>
+
     <!-- Dependencies -->
     <dependencies>
         <dependency>

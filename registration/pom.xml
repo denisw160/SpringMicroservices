@@ -21,6 +21,7 @@
         A registration server for microservices.
     </description>
 
+    <!-- Build Settings -->
     <build>
         <finalName>registration</finalName>
     </build>

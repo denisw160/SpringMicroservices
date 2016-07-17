@@ -22,6 +22,11 @@
         A service for reading temperature of unix sensors (use vcgencmd).
     </description>
 
+    <!-- Build Settings -->
+    <build>
+        <finalName>temperature</finalName>
+    </build>
+
     <!-- Dependencies -->
     <dependencies>
         <dependency>
