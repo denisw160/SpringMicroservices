@@ -22,9 +22,9 @@ case $1 in
     ;;
     stop)
         if [ -f $PID ]; then
-            PID=$(cat $PID);
+            P=$(cat $PID);
             echo "$SERVICE stopping ..."
-            kill $PID;
+            kill $P;
             echo "$SERVICE stopped."
             rm $PID
         else
@@ -33,9 +33,9 @@ case $1 in
     ;;
     restart)
         if [ -f $PID ]; then
-            PID=$(cat $PID);
+            P=$(cat $PID);
             echo "$SERVICE stopping ...";
-            kill $PID;
+            kill $P;
             echo "$SERVICE stopped.";
             rm $PID
             echo "$SERVICE starting ..."
