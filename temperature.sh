@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Settings for Service
-SERVICE=registration
+SERVICE=temperature
 JAR=$SERVICE.jar
 PID=$SERVICE.pid
 LOG=$SERVICE.log
