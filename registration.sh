@@ -13,7 +13,7 @@ case $1 in
     start)
         echo "Starting $SERVICE ..."
         if [ ! -f $PID ]; then
-            nohup $JAVA -jar $JAR >> $LOG &
+            nohup $JAVA -jar $JAR > $LOG &
             echo $! > $PID
             echo "$SERVICE started."
         else
@@ -39,7 +39,7 @@ case $1 in
             echo "$SERVICE stopped.";
             rm $PID
             echo "$SERVICE starting ..."
-            nohup $JAVA -jar $JAR >> $LOG &
+            nohup $JAVA -jar $JAR > $LOG &
             echo $! > $PID
             echo "$SERVICE started."
         else
