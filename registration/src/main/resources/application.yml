@@ -1,3 +1,12 @@
+# Spring properties
+spring:
+  thymeleaf:
+    enabled: false              # Discovery Server Dashboard uses FreeMarker.  Don't want Thymeleaf templates
+
+# HTTP Server
+server:
+  port: 1111                    # HTTP (Tomcat) port
+
 # Configure this Discovery Server
 eureka:
   instance:
@@ -5,11 +14,5 @@ eureka:
   client:                       # Not a client, don't register with yourself
     registerWithEureka: false
     fetchRegistry: false
-
-server:
-  port: 1111                    # HTTP (Tomcat) port
-
-# Discovery Server Dashboard uses FreeMarker.  Don't want Thymeleaf templates
-spring:
-  thymeleaf:
-    enabled: false              # Disable Thymeleaf
+  server:
+    enableSelfPreservation: false

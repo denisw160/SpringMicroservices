@@ -1,0 +1,18 @@
+# Spring properties
+spring:
+  application:
+    name: temperature-service         # Service registers under this name
+
+# HTTP Server
+server:
+  port: 2222                          # HTTP (Tomcat) port
+
+# Discover Server Access
+eureka:
+  # Eureka Server Port in programm args
+  #client:
+  #  serviceUrl:
+  #    defaultZone: http://localhost:1111/eureka
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 10
