@@ -55,20 +55,20 @@ public class TemperatureController {
     private Temperature getTemperature() {
         Temperature t = new Temperature();
 
-        if (!existsCommand()) {
-            parseTemperature(t, "temp=51.0'C"); // Sample Value, if command not exists
-        } else {
+        if (existsVcGenCmd()) {
             try {
-                readTemperatureFromCommand(t);
+                readTemperatureFromVcGenCmd(t);
             } catch (Exception ex) {
                 LOG.warning("Error while reading temperature: " + ex.getMessage());
             }
+        } else {
+            parseTemperatureFromVcGenCmd(t, "temp=51.0'C"); // Sample Value, if command not exists
         }
 
         return t;
     }
 
-    private void readTemperatureFromCommand(Temperature t) throws Exception {
+    private void readTemperatureFromVcGenCmd(Temperature t) throws Exception {
         String temp = null;
         Runtime rt = Runtime.getRuntime();
         String[] command = {COMMAND, "measure_temp"};
@@ -89,17 +89,17 @@ public class TemperatureController {
             LOG.warning(s);
         }
 
-        parseTemperature(t, temp);
+        parseTemperatureFromVcGenCmd(t, temp);
     }
 
-    private void parseTemperature(Temperature t, String temp) {
+    private void parseTemperatureFromVcGenCmd(Temperature t, String temp) {
         final String tempValue = StringUtils.remove(temp, "temp=");
         final String[] split = StringUtils.split(tempValue, "'");
         t.setValue(Double.valueOf(split[0]));
         t.setUnit(split[1]);
     }
 
-    private boolean existsCommand() {
+    private boolean existsVcGenCmd() {
         File f = new File(COMMAND);
         return f.exists();
     }
